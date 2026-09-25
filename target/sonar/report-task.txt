@@ -1,0 +1,6 @@
+projectKey=student-performance-predictor
+serverUrl=http://localhost:9000
+serverVersion=26.2.0.119303
+dashboardUrl=http://localhost:9000/dashboard?id=student-performance-predictor
+ceTaskId=5090f2f2-eb0b-42b7-bf30-a1c7814f618c
+ceTaskUrl=http://localhost:9000/api/ce/task?id=5090f2f2-eb0b-42b7-bf30-a1c7814f618c

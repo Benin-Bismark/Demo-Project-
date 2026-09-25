@@ -1,9 +1,12 @@
 package com.studentpredictor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-
         Student student = new Student(
                 "Bismarck",
                 6,
@@ -13,13 +16,12 @@ public class Main {
         );
 
         Predictor predictor = new Predictor();
-
         String result = predictor.predict(student);
 
-        System.out.println("-----------------------------");
-        System.out.println("Student Performance Predictor");
-        System.out.println("-----------------------------");
-        System.out.println("Student: " + student.name);
-        System.out.println("Prediction: " + result);
+        logger.info("------------------------");
+        logger.info("Student Performance Predictor");
+        logger.info("------------------------");
+        logger.info("Student: {}", student.name);
+        logger.info("Prediction: {}", result);
     }
 }
