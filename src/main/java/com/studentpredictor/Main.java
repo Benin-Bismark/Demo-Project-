@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Student student = new Student(
                 "Bismarck",
                 6,
@@ -16,12 +16,16 @@ public class Main {
         );
 
         Predictor predictor = new Predictor();
-        String result = predictor.predict(student);
+        String ruleResult = predictor.predict(student);
+
+        MlPredictorClient mlClient = new MlPredictorClient();
+        String mlResult = mlClient.predictViaApi(student);
 
         logger.info("------------------------");
         logger.info("Student Performance Predictor");
         logger.info("------------------------");
         logger.info("Student: {}", student.name);
-        logger.info("Prediction: {}", result);
+        logger.info("Rule-based prediction: {}", ruleResult);
+        logger.info("ML API prediction: {}", mlResult);
     }
 }
