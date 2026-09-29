@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ml-model-api.py .
 COPY student_predictor_model.pkl .
 
-RUN pip install flask scikit-learn pandas numpy joblib
+RUN pip install flask scikit-learn pandas numpy joblib flask-cors
 
 EXPOSE 5000
 
